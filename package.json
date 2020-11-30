@@ -1,0 +1,30 @@
+{
+  "name": "the-death-valley",
+  "version": "1.0.0",
+  "description": "entry dev incubator project",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Larkgronick/the-death-valley.git"
+  },
+  "author": "Larkgronick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Larkgronick/the-death-valley/issues"
+  },
+  "homepage": "https://github.com/Larkgronick/the-death-valley#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "sass": "^1.29.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.9.0",
+    "webpack-cli": "^4.2.0"
+  }
+}
