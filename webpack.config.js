@@ -34,6 +34,25 @@ module.exports = {
               // Compiles Sass to CSS
               "sass-loader",
             ],
+          },
+          {
+            test: /\.(png|jpg|gif)$/i,
+            use: [
+              {
+                loader: 'url-loader',
+                options: {
+                  limit: 8192,
+                },
+              },
+            ],
+          },
+          {
+            test: /\.(png|jpe?g|gif|ttf)$/i,
+            use: [
+              {
+                loader: 'file-loader',
+              },
+            ],
           }
         ]
       }
