@@ -1,3 +1,5 @@
+//connect local fonts
+
 @font-face {
     font-family: Montserrat-Bold;
     src: url('./assets/fonts/Montserrat-Bold.ttf');
@@ -23,139 +25,184 @@
 }
 
 
-$section-caption-color: #181919;
-$header-bg-color: #eff0f2;
+//variables 
+
+
 $captions-font: Montserrat-Bold, sans-serif;
 $subcaptions-font: Merriweather-Regular, sans-serif;
 $description-font: Raleway-Regular, sans-serif;
+$contact-font: Montserrat-Regular, sans-serif;
+$section-caption-color: #181919;
+$header-bg-color: #eff0f2;
 $highlight: #8bc8c4;
+$shadow-hover: #5e5f5f;
+$member: #6cf2e8;
+$contact: #01121d;
+$feedback:#c1c5c9;
+
 
 %content-position{
   padding: 0 188px;
 
 }
 
-// MAIN
+%flex-between{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
-  *{
-      margin: 0;
-      padding: 0;
-  
-  }
-  
-//   html {
-//     scroll-behavior: smooth;
-  
-//   }
-  
-  body {
-    width: 1800px;
-    margin: 0 auto;
-  
-  }
+}
 
-  header{
-    height: 1005px;
-    background-color: $header-bg-color;
-
-  }
-
-  .introduction{
-    @extend %content-position;
-    padding-top: 80px;
+%flex-column{
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-family: $captions-font;
-  
-    .introduction__brand{
-        width: 128px;
-        height: 38px;
-        padding-top: 5px;
-        font-size: 16pt;
-        border: 7px solid black;
-       
-
-        .introduction__brand_highlight{
-            font-size: 20pt;
-            color: $highlight;
-
-        }
+}
 
 
-    }
 
-    .introduction__caption{
-        margin-top: 241px;
-        font-size: 41pt;
-        font-weight: 500;
-        letter-spacing: 3.5px;
-        line-height: 1.36;
-        opacity: 70%;
-        text-shadow: 1px 6px 13px #505050;
-       
-        .introduction__caption_highlight{
-            background-color: $highlight;
+// MAIN
 
-        }
+*{
+    margin: 0;
+    padding: 0;
 
-    }
+}
 
-    .introduction__contact{
-        align-self: center;
-        margin-top: 171px;
-        width: 290px;
-        height: 66px;
-        border: 3px solid #505050;
-        border-radius: 4px;
-        font-family: Montserrat-Regular, sans-serif;
-        font-size: 22px;
-        font-weight: 800;
-        letter-spacing: 3px;
-        
+html {
+  scroll-behavior: smooth;
 
-    }
+}
 
-    .introduction__image{
-        width: 153px;
-        align-self: flex-end;
-        position: relative;
-        bottom: 46px;
-        right: 62px;
+body {
+  width: 1800px;
+  margin: 0 auto;
 
-    }
+}
+
+a{
+  text-decoration: none;
+
+}
+
+.about, .works, .team, #contacts{
+  @extend %content-position;
+
+}
+.about__caption, .works__caption, .team__caption{
+  @extend %flex-column;
+
+  h2{
+      font-family: $captions-font;
+      font-size: 36pt;
 
   }
 
-//   main{
+  h3{
+      font-family: $subcaptions-font;
+      font-size: 17pt;
+      font-weight: 200;
+      line-height: 1.6;
+      color: $shadow-hover;
+  
+  }
 
-//   }
+}
 
-.about, .works, .team, .contacts{
-    @extend %content-position;
+// HEADER
+
+.introduction{
+  @extend %content-position;
+  @extend %flex-column;
+  height: 1005px;
+  padding-top: 80px;
+  background-color: $header-bg-color;
+  font-family: $captions-font;
+
+  .introduction__brand{
+      width: 128px;
+      height: 38px;
+      padding-top: 5px;
+      border: 7px solid black;
+      font-size: 16pt;
+      transition: 0.3s;
+      cursor: pointer;
+
+      .introduction__brand_highlight{
+          font-size: 20pt;
+          color: $highlight;
+
+      }
+
+  }
+
+  .introduction__brand:hover{
+      color: $highlight;
+     
+  }
+
+  .introduction__caption{
+      margin-top: 241px;
+      font-size: 41pt;
+      font-weight: 500;
+      letter-spacing: 3.5px;
+      line-height: 1.36;
+      opacity: 70%;
+      text-shadow: 1px 6px 13px $shadow-hover;
+     
+      .introduction__caption_highlight{
+          background-color: $highlight;
+
+      }
+  }
+
+  .introduction__contact{
+      align-self: center;
+      margin-top: 171px;
+      width: 290px;
+      height: 66px;
+      border: 3px solid $shadow-hover;
+      border-radius: 4px;
+      font-family: $contact-font;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      transition: 0.3s;
+      
+  }
+
+  .introduction__contact:hover{
+      background-color: $shadow-hover;
+      cursor: pointer;
+      
+  }
+  
+  .introduction__image{
+      width: 153px;
+      align-self: flex-end;
+      position: relative;
+      bottom: 46px;
+      right: 62px;
+
+  }
 
 }
 
-.about__caption, .works__caption, .team__caption{
-    text-align: center;
-    h2{
-        font-family: $captions-font;
-        font-size: 36pt;
-    }
-
-    h3{
-        font-family: $subcaptions-font;
-        font-size: 17pt;
-        font-weight: 200;
-        line-height: 1.6;
-        color: #5e5f5f;
-    
-    }
+.introduction a:visited {
+  color: $section-caption-color;
 
 }
+
+.introduction a:active {
+  color: $section-caption-color;
+
+}
+
+// ABOUT US
 
 .about__caption{
-    padding: 150px 0 175px 0;
+    padding: 70px 0 175px 0;
+
     h3{
         letter-spacing: 1.4px;
 
@@ -164,18 +211,19 @@ $highlight: #8bc8c4;
 }
 
 .description{
-    display: flex;
-    justify-content: space-between;
+    @extend %flex-between;
     padding: 0 40px 0 100px;
+
     .description__image{
         width: 490px;
-        box-shadow: 1px 1px 30px #cfd1d1;
+        box-shadow: 1px 1px 30px $shadow-hover;
 
     }
 
     .description__aside{
         width: 600px;
         line-height: 1.58;
+
         h3{
             margin-bottom: 21px;
             font-family: $subcaptions-font;
@@ -186,7 +234,6 @@ $highlight: #8bc8c4;
         p{
             font-family: $description-font;
          
-
         }
 
         .description__aside_what-caption{
@@ -210,12 +257,16 @@ $highlight: #8bc8c4;
             letter-spacing: 0.6px;
             
         }
+
     }
 
 }
+
+// WORKS
 
 .works__caption{
     padding: 358px 0 145px 0;
+
     h3{
         letter-spacing: 0.7px;
 
@@ -223,20 +274,61 @@ $highlight: #8bc8c4;
 
 }
 
-.gallery{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+#gallery{
+    @extend %flex-between;
+
     img{
-        width: 463px;
         padding-bottom: 14px;
+        width: 463px;
+        
+    }
+
+    img:hover{
+        cursor: pointer;
 
     }
 
 }
+
+#modal{
+    position: relative;
+    bottom: 460px;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none;
+
+    #modal__content{
+        @extend %flex-between;
+        flex-wrap: nowrap;
+        width: 75%;
+        height: 75%;
+
+        #modal__content_close{
+            padding-left: 50px;
+            font-size: 70pt;
+            cursor: pointer;
+    
+        }
+
+        #modal__content_image{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            box-shadow: 0 0 10px black;
+    
+        }
+
+    }
+
+}
+
+
+// TEAM
 
 .team__caption{
     padding: 254px 0 145px 0;
+
     h3{
         letter-spacing: 0.7px;
 
@@ -244,167 +336,179 @@ $highlight: #8bc8c4;
 
 }
 
-//similar to gallery
-
 .members{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+   @extend %flex-between;
 
 }
 
 .member {
     position: relative;
 
-}
-  
     .member__message {
-        width: 90%;
-        transition: .5s ease;
-        opacity: 0;
         position: absolute;
         top: 67%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: 90%;
         text-align: left;
-        background-color: #6cf2e8;
+        transition: 0.5s ease;
+        opacity: 0;
+        background-color: $member;
+
     }
 
     .member__message::before {
         content: '';
     	position: absolute;
-    	width: 0;
-    	height: 0;
         bottom: 100%;
         right: 88%;
+        width: 0;
+    	height: 0;
     	border: .75rem solid transparent;
-    	border-bottom-color: #6cf2e8;
+        border-bottom-color: $member;
+        
     }
 
     .member__image {
         width: 461px;
         padding-bottom: 18px;
-    }
 
-
-  .member:hover .member__image {
-    opacity: 0.3;
-  }
-  
-  .member:hover .member__message {
-    opacity: 1;
-  }
-  
-  .text {
-    background-color: #6cf2e8;
-    color: #000;
-    padding: 0px 45px;
-    h4{
-        font-size: 18pt;
-        letter-spacing: 2.8px;
-        font-family: Merriweather-Regular,sans-serif;
-        padding: 48px 0 22px 0;
-    }
-    span{
-        font-size: 11pt;
-        font-style: oblique;
-        color: #757776;
-    }
-
-    p{
-        font-family: Montserrat-Regular,sans-serif;
-        font-size: 14.1pt;
-        line-height: 1.7;
-        padding-bottom: 38px;
-    }
-
-  }
-
-  .text__social{
-    width: 110px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; //similar
-    padding-bottom: 57px;
-
-    img{
-        height: 16px;
     }
 
 }
+  
+.member:hover .member__image {
+    opacity: 0.3;
 
+}
+  
+  .member:hover .member__message {
+    opacity: 1;
 
-.contacts{
-    height: 728px;
-    display: flex;
-    justify-content: space-between;
+}
+  
+.text {
+  padding: 0px 45px;
+  background-color: $member;
+  color: $section-caption-color;
+  
+    h4{
+        padding: 48px 0 22px 0;
+        font-size: 18pt;
+        letter-spacing: 2.8px;
+        font-family: $subcaptions-font;
+
+    }
+
+    span{
+        font-size: 11pt;
+        font-style: oblique;
+        color: $shadow-hover;
+    }
+
+    p{
+        font-family: $contact-font;
+        font-size: 14.1pt;
+        line-height: 1.7;
+        padding-bottom: 38px;
+
+    }
+
+   .text__social{
+      @extend %flex-between;
+      padding-bottom: 57px;
+      width: 110px;
+      transition: 0.3s;
+  
+      img{
+          height: 16px;
+
+      }
+
+      img:hover{
+          border-radius: 5%;
+          background-color: $shadow-hover;
+
+      }
+  
+   }
+
+}
+
+ 
+// CONTACTS
+
+#contacts{
+    @extend %flex-between;
     padding-top: 370px;
-    font-family: Raleway-Regular, sans-serif;
+    height: 728px;
     background-position: 50% 100%; 
     background-size: 100% 107%; 
     opacity: 0.9;
-    color: #c1c5c9;
-  
-
+    color: $feedback;
+    font-family: $description-font;
+    
     .contacts__form{
+        @extend %flex-column;
         padding: 22px 41px 0 40px;
         width: 682px;
         height: 551px;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        background: #01121d;
+        background: $contact;
         opacity: 0.9;
   
-
         input{
-            font-size: 19.8pt;
-            background: none;
-            outline: 0;
-            border-width: 0 0 2px;
             padding: 22px 0 18px 0;
-            border-color: #b7bcc0;
-            color: #c1c5c9;
-            opacity: 1;
+            border-width: 0 0 2px;
+            outline: 0;
+            background: none;
+            font-size: 19.8pt;
+ 
         }
 
         ::placeholder {
-            color:  #c1c5c9;
             font-size: 14pt;
         
         }
 
         .contacts__form_message{
-            height: 172px;
             padding-bottom: 102px;
-
+            height: 172px;
+            
         }
 
         .contacts__form_send{
-            font-family: $captions-font;
-            font-size: 16pt;
             margin-top: 46px;
             width: 301px;
-            height: 64px;
-            background-color: #6eeee4;
+            height: 66px;
             border: none;
-            border-radius: 6px;
+            border-radius: 5px;
+            font-family: $captions-font;
+            font-size: 16pt;
+            background-color: $member;
             letter-spacing: 3px;
+            transition: 0.3s;
+            cursor: pointer;
          
+        }
+
+        .contacts__form_send:hover{
+            background-color: $shadow-hover;
+            
         }
 
     }
 
     .contacts__address{
-        font-size: 14pt;
         padding: 38px 105px 0 40px;
         width: 482px;
-        background-color: #01121d;
+        font-size: 14pt;
+        background-color: $contact;
         opacity: 0.9;
 
         li{
-            list-style-type: none;
             padding-bottom: 9px;
+            list-style-type: none;
+
         }
 
         .contacts__address_web{
@@ -413,46 +517,66 @@ $highlight: #8bc8c4;
         }
 
     }
+
     .contacts__address_map{
-        padding: 17px 0 23px 29px;
-        background-color: #01121d;
+        padding: 17px 23px 23px 29px;
+        width: 576px;
+        height: 278px;
+        background-color: $contact;
         opacity: 0.9;
-        img{                    /// change here img !
-            width: 569px;
-            height: 284px;
-        }
-        
+
     }
 
 }
+
+//FOOTER
 
 .socials{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-direction: column;
-    .socials h2{
+    padding-top: 107px;
+    height: 390px;
+    text-align: center;
+    font-family: $description-font;
+    font-size: 10pt;
+    letter-spacing: 2px;
+    color: white;
+    background-color: #262b2e;
 
+    .socials__links{
+        padding-top: 21px;
 
+        .socials__links_images{
+            position: relative;
+            display: inline-block;
+            width: 25px;
+            padding: 11px 16px;
+            margin: 0 3px;
+            background-color: #3f4244;
+            cursor: pointer;
+
+        }
+
+        .top{
+          display: inline;
+          position: absolute;
+          top: 11px;
+          left: 17px;
+          z-index: 1;
+
+        }
+
+        .socials__links_images:hover {
+            
+            .top{
+                display: none;
+            }
+         
+        }
+
+        .socials__links_images:hover{
+            background-color: #6eeee4
+         
     }
+
+  }
+
 }
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

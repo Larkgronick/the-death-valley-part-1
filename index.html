@@ -2,12 +2,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<33d3bcc5-4821-4853-89ed-4c298f57140c>" type="text/javascript"></script>
+        <link rel="shortcut icon" href="src/assets/glass.png" type="image/png">
         <title>Shopno</title>
     </head>
     <body>
         <header>
             <div class="introduction">
-              <h2 class="introduction__brand">SH<span class="introduction__brand_highlight">O</span>PNO</h2>
+              <a href="#0">
+                  <h2 class="introduction__brand">SH<span class="introduction__brand_highlight">O</span>PNO</h2>
+              </a>
               <h1 class="introduction__caption">
                   <b>
                   SAY HELLO TO <span class="introduction__caption_highlight">SHOPNO!
@@ -15,7 +20,7 @@
                   AGENCY</span>  CORPORATE SHOPNO THEME
                   </b>
               </h1>
-              <button class="introduction__contact">CONTACT US</button>
+              <a href="#contacts"><button class="introduction__contact">CONTACT US</button></a>
               <img class="introduction__image" src="/src/assets/glass.png" alt="glass">
             </div>
         </header>
@@ -42,7 +47,7 @@
                     <h2>FEATURED WORKS</h2>
                     <h3>LOREM IPSUM DOLOR SIT AMET EVENT LANDING TEMPLATE</h3>
                 </div>
-                <article class="gallery">
+                <article id="gallery">
                     <img src="src/assets/work-1.png" alt="work-cake">
                     <img src="src/assets/work-2.png" alt="work-cards">
                     <img src="src/assets/work-3.png" alt="work-bottles">
@@ -50,6 +55,12 @@
                     <img src="src/assets/work-5.png" alt="work-number">
                     <img src="src/assets/work-6.png" alt="work-tea">
                 </article>
+                <div id="modal">
+                    <div id="modal__content">
+                        <img  id="modal__content_image" src="src/assets/work-1.png" alt="work">
+                        <span id="modal__content_close">&times;</span>
+                    </div>
+                </div>
             </section>
             <section  class="team">
                 <div class="team__caption">
@@ -136,7 +147,7 @@
                         <img class="member__image" src="src/assets/member-1-6.png" alt="team-member-6">
                         <div class="member__message">
                           <div class="text">
-                            <h4>MIA GLASSOVA<span> / UI Designer</span> </h4> 
+                            <h4>MIA GLASSOVA<span> / Designer</span> </h4> 
                             <p>Lorem Ipsum is not simply is  an action designer random text It has roots in a piece. </p>
                             <div class="text__social">
                                 <a href="#6"><img src="src/assets/logo-al-facebook.png" alt="mia-facebook"></a>
@@ -149,7 +160,7 @@
                     </div>
                 </article>
             </section>
-            <section style="background-image: url(src/assets/background-christmas.png)" class="contacts">
+            <section style="background-image: url(src/assets/background-christmas.png)" id="contacts">
                 <form class="contacts__form">
                     <input id="name" type="text" name="Name" placeholder="Name*" required>
                     <input id="subject" type="text" name="Subject" placeholder="Subject*" > 
@@ -171,17 +182,29 @@
                         </ul>
                        
                     </div>
-                    <div class="contacts__address_map"> <img src="src/assets/map.png" alt="map"> </div>
+                    <div id="map" class="contacts__address_map"></div>
                 </aside>
             </section>
         </main>
         <footer class="socials">
             <h2>FOLLOW US</h2>
-            <div>
-                <img src="src/assets/logo-pinterest.png" alt="pinterest">
-                <img src="src/assets/logo-twitter.png" alt="twitter">
-                <img src="src/assets/logo-facebook.png" alt="facebook">
-                <img src="src/assets/logo-net.png" alt="net">
+            <div class="socials__links">
+                <div class="socials__links_images">
+                    <img src="src/assets/logo-pinterest-back.png" alt="pinterest-back">    
+                    <img class="top" src="src/assets/logo-pinterest-top.png" alt="pinterest-top">
+                </div>
+                <div class="socials__links_images">
+                    <img src="src/assets/logo-twitter-back.png" alt="twitter-back">
+                    <img class="top" src="src/assets/logo-twitter-top.png" alt="twitter-top">
+                </div>
+                <div class="socials__links_images">
+                    <img src="src/assets/logo-facebook-back.png" alt="facebook-back">   
+                    <img class="top"src="src/assets/logo-facebook-top.png" alt="facebook-top">
+                </div>
+                <div class="socials__links_images">
+                    <img src="src/assets/logo-net-back.png" alt="net-back">  
+                    <img class="top" src="src/assets/logo-net-top.png" alt="net-top">
+                </div>
             </div>
         </footer>
         <script src='./dist/bundle.js'></script>
