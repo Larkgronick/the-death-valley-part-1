@@ -125,6 +125,7 @@ a{
       padding-top: 5px;
       border: 7px solid black;
       font-size: 16pt;
+      color: $section-caption-color;
       transition: 0.3s;
       cursor: pointer;
 
@@ -291,9 +292,9 @@ a{
 }
 
 #modal{
-    position: relative;
-    bottom: 460px;
-    left: 65%;
+    position: absolute;
+    top: 3088px;
+    left: 60%;
     transform: translate(-50%, -50%);
     z-index: 1;
     display: none;
@@ -301,8 +302,8 @@ a{
     #modal__content{
         @extend %flex-between;
         flex-wrap: nowrap;
-        width: 75%;
-        height: 75%;
+        width: 1090px;
+        height: 800px;
 
         #modal__content_close{
             padding-left: 50px;
@@ -327,7 +328,7 @@ a{
 // TEAM
 
 .team__caption{
-    padding: 254px 0 145px 0;
+    padding: 254px 0 140px 0;
 
     h3{
         letter-spacing: 0.7px;
@@ -440,7 +441,7 @@ a{
 
 #contacts{
     @extend %flex-between;
-    padding-top: 370px;
+    padding-top: 369px;
     height: 728px;
     background-position: 50% 100%; 
     background-size: 100% 107%; 
@@ -450,14 +451,14 @@ a{
     
     .contacts__form{
         @extend %flex-column;
-        padding: 22px 41px 0 40px;
+        padding: 22px 43px 0 40px;
         width: 682px;
         height: 551px;
         background: $contact;
         opacity: 0.9;
   
         input{
-            padding: 22px 0 18px 0;
+            padding: 24px 0 23px 0;
             border-width: 0 0 2px;
             outline: 0;
             background: none;
@@ -471,15 +472,15 @@ a{
         }
 
         .contacts__form_message{
-            padding-bottom: 102px;
+            padding-bottom: 81px;
             height: 172px;
             
         }
 
         .contacts__form_send{
-            margin-top: 46px;
+            margin: 57px 0 40px 0;
             width: 301px;
-            height: 66px;
+            height: 322px;
             border: none;
             border-radius: 5px;
             font-family: $captions-font;
@@ -578,5 +579,471 @@ a{
     }
 
   }
+
+}
+
+// RESPONSIVE
+
+// LOW RESOLUTION
+
+@media screen and (max-width: 1020px) {
+    body {
+        width: 900px;
+      
+      }
+    
+    %content-position{
+        padding: 0;
+
+    }
+
+    .about__caption, .works__caption, .team__caption {
+        padding: 120px 0;
+        
+    }
+
+    .introduction__brand{
+        margin: 50px 0 0 50px;
+
+    }
+
+    .introduction__caption {
+        margin-top: 200px;
+
+    }  
+    
+    .description{
+        justify-content: space-around;
+    
+        .description__image{
+            width: 300px;
+    
+        }
+    
+        .description__aside{
+            width: 350px;
+    
+            .description__aside_what-caption{
+                text-align: center;
+                font-size: 11.5pt;
+               
+            }
+            
+            .description__aside_what-text{
+                margin-bottom: 22px;
+                font-size: 11pt;
+                
+            }
+    
+            .description__aside_why-caption{ 
+                text-align: center;
+                font-size: 11pt;
+                
+            }
+    
+            .description__aside_why-text{ 
+                font-size: 10pt;
+                
+            }
+    
+        }
+
+    }
+
+    #gallery{
+        justify-content: space-around;
+    
+        img{
+            width: 263px;
+            
+        }
+    
+    }
+    
+    #modal{
+        top: 2328px;
+
+        #modal__content{
+            width: 684px;
+            height: 400px;
+           
+        }
+    
+    }
+
+    .members{
+        justify-content: space-around;
+     
+     }
+
+    .member {
+          
+        .member__image {
+            width: 248px;
+    
+        }
+    
+    }
+                 
+    .text {
+      padding: 0px 10px;
+      
+        h4{
+            padding: 18px 0 10px 0;
+            font-size: 10pt;
+    
+        }
+    
+        span{
+            font-size: 6pt;
+
+        }
+    
+        p{
+            font-size: 10pt;
+            padding-bottom: 20px;
+    
+        }
+    
+       .text__social{
+          padding-bottom: 12px;
+               
+       }
+    
+    }
+
+
+    #contacts{
+        justify-content: space-around;
+        margin-top: 150px;
+        height: 652px;
+        background-position: 50% 100%; 
+        background-size: 100% 107%; 
+            
+        .contacts__form{
+            width: 282px;
+    
+            .contacts__form_send{
+                width: 300px;
+   
+            }
+    
+        }
+
+        .contacts__address{
+            width: 382px;
+
+        }
+    
+        .contacts__address_map{
+            width: 475px;
+    
+        }
+    
+    }
+
+}
+
+
+/*TABLET*/
+
+@media screen and (max-width: 768px) {
+
+    body {
+        width: 700px;
+      
+      }
+    
+    .about__caption, .works__caption, .team__caption{
+      h2{
+          font-size: 26pt;
+
+      }
+
+      h3{
+          font-size: 12pt;
+
+      }
+
+    }
+
+    .introduction{
+
+        .introduction__caption {
+            font-size: 30pt;
+
+        }
+
+        .introduction__image{
+            width: 73px;
+            align-self: flex-end;
+            position: relative;
+            bottom: 46px;
+            right: 62px;
+      
+        }
+        
+    }
+
+
+    .description{
+        padding: 0 20px 0 20px ;
+
+        .description__image{
+            width: 250px;
+            height: 330px;
+    
+        }
+    
+    }
+
+    #gallery{
+        
+        img{
+            width: 220px;
+            
+        }
+    
+    }
+    
+    #modal{
+        top: 2250px;
+
+        #modal__content{
+            width: 545px;
+            height: 320px;
+           
+        }
+    
+    }
+
+
+    .member {
+          
+        .member__image {
+            width: 233px;
+    
+        }
+    
+    }
+                 
+    .text {
+    
+        h4{
+            padding: 10px 0 20px 0;
+            font-size: 9pt;
+    
+        }
+    
+        p{
+            font-size: 8.5pt;
+            padding-bottom: 12px;
+    
+        }
+
+       .text__social img {
+            height: 12px;
+        
+        }
+    
+    }
+
+
+    #contacts{
+               
+        .contacts__form{
+            padding: 12px 12px 0 12px;
+            width: 200px;
+    
+            .contacts__form_send{
+                width: 192px;
+   
+            }
+    
+        }
+
+        .contacts__address{
+            width: 308px;
+
+        }
+    
+        .contacts__address_map{
+            width: 401px;
+            height: 269px;
+    
+        }
+    
+    }
+
+    .socials{
+        padding-top: 87px;
+        height: 190px;
+
+    }
+
+}
+
+
+@media screen and (max-width: 375px) {
+
+    body {
+        width: 300px;
+      
+      }
+    
+    .about__caption, .works__caption, .team__caption{
+        padding: 50px 0;
+
+        h2{
+            font-size: 14pt;
+
+        }
+
+        h3{
+            font-size: 8pt;
+
+        }
+
+    }
+
+  
+    .introduction{
+        height: 569px;
+
+        .introduction__brand {
+            margin: 20px auto;
+            padding-top: 9px;
+            height: 32px;
+            font-size: 12pt;
+
+
+            .introduction__brand_highlight{
+                font-size: 14pt;
+
+            }
+
+        }
+
+
+        .introduction__caption {
+            margin: 105px 0 155px 0;
+            font-size: 12pt;
+
+        }
+
+        .introduction__contact{
+            margin: 0;
+            width: 205px;
+            height: 54px;
+            font-size: 16px;
+
+        }
+
+
+        .introduction__image{
+            bottom: 0px;
+            top: 10px;
+            right: 0px;
+      
+        }
+
+    }
+
+
+    .description{
+
+        .description__image{
+            width: 240px;
+            height: 300px;
+            margin-bottom: 20px;
+    
+        }
+    
+    }
+
+    #gallery{
+        
+        img{
+            width: 140px;
+            
+        }
+    
+    }
+    
+    #modal{
+        top: 1864px;
+
+        #modal__content{
+            flex-direction: column-reverse;
+            width: 269px;
+            height: 244px;
+            padding: 0 66px 0 0;
+           
+            
+            #modal__content_close {
+                font-size: 41pt;
+
+            }
+
+        }
+    
+    }
+
+    #contacts{
+        margin-top: 20px;
+        height: 1150px;
+        background-position: 55% 50%;
+        background-size: 176% 40%;
+        background-repeat: no-repeat;
+  
+        .contacts__form{
+            width: 276px;
+            height: 450px;
+
+            input{
+                font-size: 10pt;
+
+            }
+           
+            .contacts__form_send{
+                margin: 20px auto;
+                font-size: 12;
+        
+            }
+
+            ::placeholder {
+                font-size: 10pt;
+            
+            }
+
+            .contacts__form_send{
+                height: 50px;
+                font-size: 11pt;
+
+            }
+    
+        }
+
+        .contacts__address{
+            margin: 0px auto;
+            padding: 26px 105px 18px 40px;
+            width: 155px;
+            font-size: 12pt;
+        }
+    
+        .contacts__address_map{
+            padding: 10px;
+            width: 280px;
+            height: 267px;
+
+        }
+    
+    }
+
+    .socials{
+        padding-top: 26px;
+        height: 107px;
+
+    }
 
 }

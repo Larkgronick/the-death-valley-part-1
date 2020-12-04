@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<33d3bcc5-4821-4853-89ed-4c298f57140c>" type="text/javascript"></script>
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=33d3bcc5-4821-4853-89ed-4c298f57140c"></script>
         <link rel="shortcut icon" href="src/assets/glass.png" type="image/png">
         <title>Shopno</title>
     </head>
@@ -20,7 +21,9 @@
                   AGENCY</span>  CORPORATE SHOPNO THEME
                   </b>
               </h1>
-              <a href="#contacts"><button class="introduction__contact">CONTACT US</button></a>
+              <form action="#contacts" method="get">
+                <button  class="introduction__contact">CONTACT US</button>
+              </form>
               <img class="introduction__image" src="/src/assets/glass.png" alt="glass">
             </div>
         </header>
@@ -31,6 +34,7 @@
                     <h3>LOREM IPSUM DOLOR SIT AMET EVENT LANDING TEMPLATE</h3>
                 </div>
                 <article class="description">
+                    <h2 style="display: none;">Description</h2>
                     <img class="description__image" src="/src/assets/desk.png" alt="work-space">
                     <aside class="description__aside">
                         <h3 class="description__aside_what-caption">WE ACTUALLY DO AMAZING WORKS</h3>
@@ -48,6 +52,7 @@
                     <h3>LOREM IPSUM DOLOR SIT AMET EVENT LANDING TEMPLATE</h3>
                 </div>
                 <article id="gallery">
+                    <h2 style="display: none;">Gallery</h2>
                     <img src="src/assets/work-1.png" alt="work-cake">
                     <img src="src/assets/work-2.png" alt="work-cards">
                     <img src="src/assets/work-3.png" alt="work-bottles">
@@ -161,11 +166,12 @@
                 </article>
             </section>
             <section style="background-image: url(src/assets/background-christmas.png)" id="contacts">
+                <h2 style="display: none;">Contacts</h2>
                 <form class="contacts__form">
                     <input id="name" type="text" name="Name" placeholder="Name*" required>
                     <input id="subject" type="text" name="Subject" placeholder="Subject*" > 
                     <input id="email" type="text" name="E-mail" placeholder="E-mail*" required>
-                    <input id="message" class="contacts__form_message" name="Message" placeholder="Message*" ></input>
+                    <input id="message" class="contacts__form_message" name="Message" placeholder="Message*" >
                     <button id="submit-button" class="contacts__form_send">SEND MESSAGE</button>
                 </form>
                 <aside >
@@ -199,7 +205,7 @@
                 </div>
                 <div class="socials__links_images">
                     <img src="src/assets/logo-facebook-back.png" alt="facebook-back">   
-                    <img class="top"src="src/assets/logo-facebook-top.png" alt="facebook-top">
+                    <img class="top" src="src/assets/logo-facebook-top.png" alt="facebook-top">
                 </div>
                 <div class="socials__links_images">
                     <img src="src/assets/logo-net-back.png" alt="net-back">  
